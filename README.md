@@ -1,7 +1,7 @@
 # bamazon
 
 
-### Task
+## Task
 Create an Amazon-like store front using MySQL and Node.js.
 
 ## Demos
@@ -20,8 +20,8 @@ Visual Studio Code, MySQLWorkbench, Terminal, Mac OS
 ### Notes
 Limitations
 
-### License
+#### License
 License copy
 
-### Referenced in
+#### Referenced in
 Github portfolio link, created by zzzbray
