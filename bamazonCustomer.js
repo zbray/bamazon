@@ -21,7 +21,6 @@ connection.connect(function (err) {
 
 //Shop Functions
 function initShop() {
-  //Display items
   console.log("It's dangerous to go alone! Gear up!");
   connection.query("SELECT * FROM products", function (err, res) {
     if (err) throw (err);
@@ -35,17 +34,37 @@ function initShop() {
 function buyItems() {
   inquirer
     .prompt([{
-        name: "itemID",
+        name: "id",
         type: "input",
-        message: "What is the ID of the product you would like to buy?",
+        message: "What is the ID of the product you would like to buy?" + "\n",
       },
       {
-        name: "itemQuant",
+        name: "quantity",
         type: "input",
         message: "How many are you interested in?"
       }
     ])
     .then(function (answer) {
       //Confirm purchase and thank user
+      //Check for stock
     });
 }
+
+function updateshop() {
+
+};
+
+function orderAgain() {
+  inquirer.prompt([{
+    name: "orderAgain",
+    type: "list",
+    message: "Would you like to keep shopping?",
+    choices: ["Yes", "No"]
+  }]).then(function (answer) {
+    if (answer.orderAgain === "Yes") {
+      initShop();
+    } else {
+      console.log("Thank you, young hero! Come again.");
+    }
+  })
+};
