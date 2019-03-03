@@ -1,13 +1,13 @@
 //Initialize Server
 var mysql = require("mysql");
-var inquirer = require("inquire");
+var inquirer = require("inquirer");
 
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
   password: "password",
-  database: "bamazon"
+  database: "bamazonDB"
 });
 
 connection.connect(function (err) {
@@ -23,16 +23,28 @@ connection.connect(function (err) {
 function initShop() {
   //Display items
   console.log("It's dangerous to go alone! Gear up!");
-  //prompt user to buy items
+  connection.query("SELECT * FROM products", function (err, res) {
+    if (err) throw (err);
+    for (var i = 0; i < res.length; i++) {
+      console.log(res[i].item_id + " " + res[i].product_name + " " + res[i].department_name + " $" + res[i].price);
+    }
+  })
+  buyItems();
 }
 
-function userBuy() {
+function buyItems() {
   inquirer
-    .prompt({
-      name: "itemID",
-      type: "input",
-      message: "What is the ID of the product you would like to buy?",
-    })
+    .prompt([{
+        name: "itemID",
+        type: "input",
+        message: "What is the ID of the product you would like to buy?",
+      },
+      {
+        name: "itemQuant",
+        type: "input",
+        message: "How many are you interested in?"
+      }
+    ])
     .then(function (answer) {
       //Confirm purchase and thank user
     });
