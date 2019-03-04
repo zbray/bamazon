@@ -21,9 +21,9 @@ connection.connect(function (err) {
 
 //init function
 function initShop() {
-  console.log("‌‌▲");
-  console.log("▲‌ ▲");
   console.log("");
+  console.log("‌‌▲");
+  console.log("▲‌ ▲\n");
   console.log("It's dangerous to go alone! Gear up!\n");
   connection.query("SELECT * FROM products", function (err, res) {
     if (err) throw (err);
@@ -69,7 +69,7 @@ function buyItems() {
             function (err, res) {
               if (err) throw (err);
             })
-          console.log("Ah, perfect. After you've purchased " + answer.purchasedQuant + " You've left me with " + res[0].stock_quantity);
+          console.log("Ah, perfect. After your purchase of " + answer.purchasedQuant + ", you've left me with " + res[0].stock_quantity + " " + res[0].product_name+"s!");
           console.log("Your total today, young hero, is $" + answer.purchasedQuant * res[0].price + "\nYour rupees are no good here!");
           orderAgain();
         } else {

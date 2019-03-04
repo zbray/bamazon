@@ -14,14 +14,14 @@ CREATE TABLE products (
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES 
     ("master sword", "weapons", 99.99, 1), 
-    ("sword of the six sages", "weapons", 49.99, 5), 
-    ("green tunic", "clothing", 22.50, 10), 
+    ("hookshot", "weapons", 49.99, 5), 
+    ("green tunic", "clothing", 24.99, 10), 
     ("green hat", "clothing", 14.99, 5), 
     ("hookshot", "weapons", 29.99, 15), 
     ("bow", "weapons", 34.99, 15), 
-    ("arrows", "ammo", 4.99, 99), 
-    ("bombs", "ammo", 19.99, 99), 
-    ("brown boots", "clothing", 29.99, 20), 
-    ("boomerang", "weapons", 9.9, 1);
+    ("arrow", "ammo", 4.99, 99), 
+    ("bomb", "ammo", 19.99, 99), 
+    ("brown boot", "clothing", 29.99, 20), 
+    ("boomerang", "weapons", 9.99, 1);
 
 SELECT * FROM products;
