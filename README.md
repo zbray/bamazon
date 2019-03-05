@@ -7,7 +7,7 @@ Create an Amazon-like storefront using MySQL and Node.js. This is a storefront c
 ## Demos
 Upon entering the shop the user is presented with a menu of items with different values - all pulled from bamazon.sql. The user is asked upon initializing the app to choose an item's item_id to purchased.
 
-![Alt text](assets/1storestart.png?raw=true "Store Opening")
+>![Alt text](assets/1storestart.png?raw=true "Store Opening")
 
 The user is then asked how many of the item the user would like to purchase
 
